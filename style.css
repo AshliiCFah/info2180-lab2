@@ -1,102 +1,127 @@
-/* Default styles */
+/* General Styles */
 body {
+    font-size: 18px;
+    color: #2D3748;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-    color: #2D3748; /* Default text color */
-    font-size: 18px; /* Default font size */
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
+/* Container using CSS Grid */
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Adjust the grid columns as needed */
-    grid-template-rows: auto 1fr auto; /* Auto height for header and footer */
-    gap: 20px; /* Space between grid items */
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-/* Header styles */
+/* Header using Flexbox */
 header {
-    grid-column: span 2; /* Span the header across both columns */
-    background-color: #63B3ED; /* Header background color */
-    color: #FFFFFF; /* Header text color */
-    text-align: center; /* Center align text */
-    padding: 20px;
-    display: flex; /* Use Flexbox for centering */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #63B3ED;
+    color: white;
+    padding: 50px 0;
 }
 
-/* Header text styles */
 header h1 {
-    font-size: 36px; /* Font size for header */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family for h1 */
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
 }
 
 header p {
-    margin: 10px 0; /* Add some space around the quote */
+    font-size: 18px;
+    margin-top: 10px;
 }
 
-/* Profile picture styles */
-.profile-pic {
-    border-radius: 50%; /* Circular image */
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
+header img.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
 }
 
-/* Main content styles */
+/* Main Content Layout (Grid item) */
 main {
-    grid-column: 2; /* Place main content in the second column */
-}
-
-article {
-    margin-bottom: 20px;
+    grid-column: 2 / 3;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 article h2 {
-    font-size: 32px; /* Blog post title font size */
-    color: #48BB78; /* Blog post title color */
+    font-size: 32px;
+    color: #48BB78;
 }
 
-.date {
-    color: #718096; /* Date and author color */
+article .date {
+    color: #718096;
+    font-size: 0.9rem;
 }
 
-/* Sidebar styles */
+article img.side-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Sidebar Layout (Grid item) */
 aside {
-    grid-column: 1; /* Place sidebar in the first column */
-    background-color: #E2E8F0; /* Background color for About section */
-    padding: 20px; /* Padding to avoid text sticking to edges */
+    grid-column: 1 / 2;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 aside h3 {
-    color: #000000; /* About heading color */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family for h3 */
+    margin-top: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Social Media and Archives headings */
-aside h3.social,
-aside h3.archives {
-    color: #48BB78; /* Color for Social Media and Archives headings */
-}
-
-ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-}
-
-/* Link colors */
-a {
-    color: #4299E1; /* Social Media and Archive link color */
-    text-decoration: none; /* Remove underline */
-}
-
-/* Footer styles */
-footer {
-    grid-column: span 2; /* Span footer across both columns */
-    background-color: #2C5282; /* Footer background color */
-    color: #FFFFFF; /* Footer text color */
-    text-align: center; /* Center align footer text */
+aside h3.about {
+    color: #000000;
+    background-color: #E2E8F0;
     padding: 10px;
+}
+
+aside h3.social, aside h3.archives {
+    color: #48BB78;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #4299E1;
+    text-decoration: none;
+}
+
+/* Footer Layout (Grid item) */
+footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: #2C5282;
+    color: white;
+    padding: 20px 0;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 0;
 }
